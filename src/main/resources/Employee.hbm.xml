@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+<hibernate-mapping>
+   <class name="hibernate.model.Employee" table="Employee">
+      <meta attribute="class-description">
+         This class contains the employee detail. 
+         This meta is only for description about the class 
+      </meta>
+      <id name="eid" type="int" column="id">
+         <generator class="native"/>
+         <!--he <generator> element within the id element is used to automatically
+          generate the primary key values. Set the class attribute of the generator
+           element is set to native to let hibernate pick up either identity, sequence
+            or hilo algorithm to create primary key depending upon the capabilities
+             of the underlying database.  -->
+      </id>
+      <property name="name" column="name" type="string"/>
+      <property name="salary" column="salary" type="double"/>
+   </class>
+</hibernate-mapping>
